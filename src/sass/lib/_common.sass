@@ -1,0 +1,262 @@
+// fonts
+$default-fonts: Arial, sans-serif
+
++font('Boblic', 'boblic')
+
+=boblic
+	font-family: 'Boblic', $default-fonts
+
+// colors
+// $black: #000
+
+=trs
+	transition: all 0.2s
+
+
+/* ===================================
+	 Main Styles
+	 =================================== */
+body
+	position: relative
+	min-width: 320px
+	height: auto
+	min-height: 100%
+	+boblic
+	font-size: 21px
+	color: #000
+	line-height: 1.42857
+
+.wrapper
+	position: relative
+	overflow: hidden
+	min-height: 100vh
+	margin: 0 auto
+	background: #fff url(../img/bg/bg.png) center center no-repeat
+	background-size: cover
+
+.container
+	max-width: 960px
+	margin-left: auto
+	margin-right: auto
+	padding-left: 20px
+	padding-right: 20px
+	+pie-clearfix
+
+
+/* Helpers
+	----------------------------------- */
+button
+	background-color: transparent
+
+a:hover, a:focus
+	text-decoration: none
+
+a
+	color: inherit
+	text-decoration: none
+
+table
+	vertical-align: top
+
+img
+	max-width: 100%
+	vertical-align: top
+
+.icon
+	display: inline-block
+	vertical-align: middle
+
+.text-left
+	text-align: left
+
+.text-center
+	text-align: center
+
+.text-right
+	text-align: right
+
+.is-hidden
+	display: none
+
+.vertical
+	display: inline-block
+	vertical-align: middle
+
+.cfx
+	+pie-clearfix
+
+// *
+// 	+selection
+// 		color: #fff
+// 		background-color: $red
+
+
+
+/* ===================================
+	 Header
+	 =================================== */
+.header
+	text-align: center
+	&__in
+		padding: 0 20px 25px
+		background-color: rgba(255,255,255,.5)
+		+r(767)
+			padding-left: 10px
+			padding-right: 10px
+	&__top
+		display: table
+		margin-left: auto
+		margin-right: auto
+		padding: 100px 25px 30px
+		background-color: #164f66
+		+r(767)
+			padding-top: 30px
+	&__h1
+		overflow: hidden
+		font-size: 0
+		text-indent: -9999px
+	&__h2
+		margin-top: 35px
+		font-size: 50px
+		font-weight: normal
+		text-transform: uppercase
+		+r(1023)
+			font-size: 40px
+		+r(767)
+			line-height: 1.1
+			margin-bottom: 10px
+		+r(413)
+			font-size: 30px
+	&__time
+		margin-top: 45px
+		color: #ffffff
+		font-size: 17px
+	&__list
+		line-height: 1.2
+		+r(1023)
+			font-size: 19px
+		+r(767)
+			font-size: 17px
+		&-item
+			& + &
+				margin-top: 10px
+		
+
+/* ===================================
+	 Footer
+	 =================================== */
+.footer
+	padding-top: 40px
+	font-size: 17px
+	color: #ffffff
+	padding-bottom: 20px
+	&__info
+		float: left
+		+r(767)
+			float: none
+	&__soc
+		float: right
+		+r(767)
+			float: none
+			margin-top: 20px
+			font-size: 0
+			text-align: center
+		
+.info
+	+pie-clearfix
+	+r(479)
+		display: table
+		margin-left: auto
+		margin-right: auto
+	&__item
+		float: left
+		+r(479)
+			float: none
+			font-size: 17px
+			margin-left: 10px
+			margin-right: 10px
+		& + &
+			margin-left: 35px
+			+r(767)
+				float: right
+			+r(479)
+				float: none
+				margin-top: 10px
+				margin-left: 10px
+	&__text
+		display: inline-block
+		margin-left: 10px
+		vertical-align: -2px
+		
+.soc
+	+pie-clearfix
+	&__item
+		float: left
+		margin-right: 10px
+		& + &
+			margin-left: 20px
+			+r(767)
+				margin-left: 10px
+		+r(767)
+			float: none
+			display: inline-block
+
+
+/* ===================================
+	 Main
+	 =================================== */
+.main
+	padding-top: 10px
+	color: #ffffff
+	
+/* Form
+	----------------------------------- */
+.form
+	position: relative
+	font-size: 17px
+	&__input
+		display: block
+		padding: 3px 240px 0 30px
+		width: 100%
+		border: 2px solid #fff
+		background-color: transparent
+		+boblic
+		font-size: inherit
+		color: inherit
+		height: 60px
+		+placeholder-color(#fff)
+		+r(767)
+			padding-left: 10px
+			padding-right: 10px
+			font-size: 15px
+			text-align: center
+	&__submit
+		position: absolute
+		top: 7px
+		right: 27px
+		padding-left: 48px
+		padding-right: 48px
+		+boblic
+		height: 46px
+		font-size: 21px
+		color: #000000
+		line-height: 52px
+		background-color: #ffffff
+		+trs
+		&:hover
+			color: #ffffff
+			background-color: #164f66
+		+r(767)
+			margin-top: 10px
+			position: relative
+			left: auto
+			top: auto
+			right: auto
+			bottom: auto
+			width: 100%
+		
+
+/* ===================================
+	 Other Styles
+	 =================================== */
+

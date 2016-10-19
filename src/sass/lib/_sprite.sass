@@ -1,0 +1,84 @@
+$icons: (0:0)
+$icons: map-merge($icons,(fb: (X: 0px, Y:0px, W: 39px, H: 39px, TW: 125px, TH: 82px, IMG: '../img/icons.png')))
+$icons: map-merge($icons,(insta: (X: -43px, Y:0px, W: 39px, H: 39px, TW: 125px, TH: 82px, IMG: '../img/icons.png')))
+$icons: map-merge($icons,(od: (X: 0px, Y:-43px, W: 39px, H: 39px, TW: 125px, TH: 82px, IMG: '../img/icons.png')))
+$icons: map-merge($icons,(phone: (X: -43px, Y:-43px, W: 39px, H: 39px, TW: 125px, TH: 82px, IMG: '../img/icons.png')))
+$icons: map-merge($icons,(settings: (X: -86px, Y:0px, W: 39px, H: 39px, TW: 125px, TH: 82px, IMG: '../img/icons.png')))
+$icons: map-merge($icons,(vk: (X: -86px, Y:-43px, W: 39px, H: 39px, TW: 125px, TH: 82px, IMG: '../img/icons.png')))
+
+
+// Gets an attribute from the sass map
+@function icon-attr($icon, $attr)
+	$icon: map-get($icons, $icon)
+	@return map-get($icon, $attr)
+
+@mixin sprite($iconName)
+	background-image: url(icon-attr($iconName, IMG))
+	width: icon-attr($iconName, W)
+	height: icon-attr($iconName, H)
+	background-position: icon-attr($iconName, X) icon-attr($iconName, Y)
+@mixin sprite-position($iconName)
+	background-position: icon-attr($iconName, X) icon-attr($iconName, Y)
+@mixin sprite-retina($iconName)
+	background-image: url(icon-attr($iconName, IMG))
+	$width: icon-attr($iconName, W)
+	$height: icon-attr($iconName, H)
+	width: $width/2
+	height: $height/2
+	$x: icon-attr($iconName, X)
+	$y: icon-attr($iconName, Y)
+	background-position: $x/2 $y/2
+	$tw: icon-attr($iconName, TW) 	
+	$th: icon-attr($iconName, TH)
+	background-size: $tw/2 $th/2
+@mixin sprite-position-retina($iconName)
+	$x: icon-attr($iconName, X)
+	$y: icon-attr($iconName, Y)
+	background-position: $x/2 $y/2
+
+
+@mixin s($i)
+	+sprite($i)
+@mixin sp($i)
+	+sprite-position($i)
+@mixin sr($i)
+	+sprite-retina($i)
+@mixin spr($i)
+	+sprite-position-retina($i)
+
+.icon-fb
+	width: 39px
+	height: 39px
+	background-image: url('../img/icons.png')
+	background-position: 0px 0px
+	background-size: 125px 82px
+.icon-insta
+	width: 39px
+	height: 39px
+	background-image: url('../img/icons.png')
+	background-position: -43px 0px
+	background-size: 125px 82px
+.icon-od
+	width: 39px
+	height: 39px
+	background-image: url('../img/icons.png')
+	background-position: 0px -43px
+	background-size: 125px 82px
+.icon-phone
+	width: 39px
+	height: 39px
+	background-image: url('../img/icons.png')
+	background-position: -43px -43px
+	background-size: 125px 82px
+.icon-settings
+	width: 39px
+	height: 39px
+	background-image: url('../img/icons.png')
+	background-position: -86px 0px
+	background-size: 125px 82px
+.icon-vk
+	width: 39px
+	height: 39px
+	background-image: url('../img/icons.png')
+	background-position: -86px -43px
+	background-size: 125px 82px
