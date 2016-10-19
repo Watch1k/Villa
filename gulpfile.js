@@ -87,8 +87,8 @@ gulp.task('sass', function() {
 						.pipe(gulp.dest('build/css')),
 				gulp.src(src.root + '/css/*.css')
 		)
-				.pipe(concat('screen.css'))
-				// .pipe(cssmin())
+				.pipe(concat('screen.min.css'))
+				.pipe(cssmin())
 				.pipe(gulp.dest('build/css'));
 });
 
